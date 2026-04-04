@@ -45,8 +45,15 @@ program
 program.usage('[command]');
 
 
-// $ sails lift
+// $ sails build
 var cmd;
+cmd = program.command('build');
+cmd.unknownOption = NOOP;
+cmd.description('Pre-generate module manifest and service bundles for production.');
+cmd.action(require('./sails-build'));
+
+
+// $ sails lift
 cmd = program.command('lift');
 cmd.option('--prod', 'Lift in "production" environment.');
 cmd.option('--staging', 'Lift in "staging" environment.');

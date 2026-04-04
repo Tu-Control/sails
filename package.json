@@ -17,7 +17,8 @@
     "socket.io"
   ],
   "bin": {
-    "sails": "./bin/sails.js"
+    "sails": "./bin/sails.js",
+    "sails-build": "./bin/sails-build.js"
   },
   "engines": {
     "node": ">= 0.10.0",
