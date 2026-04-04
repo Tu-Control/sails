@@ -11,3 +11,8 @@ module.exports = function() {
   var build = require('../lib/hooks/moduleloader/build');
   build(process.cwd());
 };
+
+// Auto-execute when run directly (e.g., `node sails-build.js` or Dockerfile)
+if (require.main === module) {
+  module.exports();
+}
